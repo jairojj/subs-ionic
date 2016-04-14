@@ -25,13 +25,13 @@ angular.module('starter', ['ionic'])
 
  .config(function($stateProvider, $urlRouterProvider){
   $stateProvider
-  .state('page1', {
-      url: "/page1",
-      templateUrl: 'templates/page1.html'
+  .state('login', {
+      url: "/login",
+      templateUrl: 'templates/login.html'
   })
   .state('page2', {
       url: "/page2",
       templateUrl: 'templates/page2.html'
   })
-  $urlRouterProvider.otherwise('/page1');
+  $urlRouterProvider.otherwise('/login');
 });
