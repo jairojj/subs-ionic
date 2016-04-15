@@ -26,8 +26,10 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="lib/angular-youtube-embed/dist/angular-youtube-embed.min.js"></script>
 
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
   </head>
-  <body ng-app="starter">
+  <body ng-app="starter" ng-controller="mycontroller">
     <ion-side-menus>
       <ion-side-menu side="left">
         <header class="bar bar-header bar-dark">
@@ -40,6 +42,9 @@
             </ion-item>
             <ion-item menu-close="" ui-sref="videos">
               Videos
+            </ion-item>
+            <ion-item menu-close="" ui-sref="search">
+              Search
             </ion-item>
           </ion-list>
         </ion-content>

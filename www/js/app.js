@@ -34,20 +34,24 @@ var app = angular.module('starter', ['ionic','youtube-embed'])
       templateUrl: 'templates/videos.html',
       controller: 'mycontroller'
   })
-  $urlRouterProvider.otherwise('/login');
+  .state('search',{
+    url:"/search",
+    templateUrl:'templates/search.html',
+    controller: 'mycontroller'
+  })
+  $urlRouterProvider.otherwise('/search');
 });
 
 app.controller('mycontroller', function($scope, $http){
   $scope.videos = [ ];
-
+  $scope.searchInput;
   $scope.youtubeParams = {
       key: 'AIzaSyA-pPQzLFEpRubdJpDZHnBjxwhW2gYGntE',
       type: 'video',
-      maxResults: '5',
+      maxResults: '10',
       part: 'id,snippet',
-      q: '',
-      order: 'date',
-      channelId: 'UCpNRkqAhix3NVv5htNq_eJw',
+      fields: 'items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle,nextPageToken',
+      q: $scope.searchInput
     }
 
   $http.get('https://www.googleapis.com/youtube/v3/search', {params:$scope.youtubeParams}).success(function(response){
