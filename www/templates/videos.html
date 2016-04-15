@@ -1,12 +1,13 @@
 <ion-view view-title="Videos">
   <ion-content class="padding">
-    <label class="item item-input">
-      <input type="text" ng-model="searchInput" placeholder="Video Name">
-    </label>
+    <div class="item item-input item-icon-right">
+      <input type="search" ng-model="searchInput.name" placeholder="Video Name">
+      <i ng-click="search()" class="icon ion-search placeholder-icon"></i>
+    </div>
     <div class="list card" ng-repeat="video in videos">
       <div class="item item-text-wrap">
         <h2>{{video.snippet.title}}</h2>
-        <p>{{video.snippet.publishedAt | limitTo: 10}}</p>
+        <p>{{video.snippet.publishedAt}}</p>
         <p>{{video.snippet.channelTitle}}</p>
       </div>
       <div class="item item-image">
