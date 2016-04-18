@@ -42,7 +42,6 @@ app.controller('mycontroller', function($scope, $http){
   $scope.searchInput = { };
 
   $scope.search = function(){
-    console.log($scope.searchInput.name);
     $scope.videos = [];
     $scope.youtubeParams = {
         key: 'AIzaSyA-pPQzLFEpRubdJpDZHnBjxwhW2gYGntE',
